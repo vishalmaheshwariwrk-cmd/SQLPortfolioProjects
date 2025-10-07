@@ -1,5 +1,19 @@
 /*
-Cleaning Data in SQL Queries
+🧹 Data Cleaning in SQL – Nashville Housing Dataset
+📘 Overview
+This project focuses on cleaning and preparing a housing dataset in SQL Server to ensure accuracy, consistency, and readiness for analysis and visualisation. 
+The raw dataset included irregular date formats, missing property details, inconsistent categorical entries, 
+and duplicate records, all of which were systematically addressed using SQL queries.
+⚙️ Key Steps and Techniques
+Standardised Date Formats – Converted inconsistent SaleDate values into a uniform SQL DATE format.
+Populated Missing Addresses – Filled missing PropertyAddress values by joining rows with matching ParcelID identifiers.
+Parsed Address Fields – Split combined property and owner addresses into distinct columns for Address, City, and State using string manipulation functions (SUBSTRING, CHARINDEX, and PARSENAME).
+Normalised Categorical Data – Replaced shorthand values (‘Y’/‘N’) in the SoldAsVacant field with standardised terms (‘Yes’/‘No’) for consistency.
+Removed Duplicates – Used a Common Table Expression (CTE) with the ROW_NUMBER() function to detect and delete duplicate entries.
+Dropped Redundant Columns – Cleaned up unnecessary columns (OwnerAddress, TaxDistrict, etc.) to streamline the dataset.
+🧩 Outcome
+The cleaned dataset was fully standardised and free of duplicates, making it suitable for exploratory data analysis and dashboard creation in Power BI or Tableau. 
+This process demonstrates my ability to write efficient SQL queries for data wrangling, integrity checks, and transformation — key skills for any data analytics workflow.
 */
 
 SELECT *
@@ -146,4 +160,5 @@ Alter table PortfolioProject.dbo.NashvilleHousing
 DROP COLUMN OwnerAddress, TaxDistrict, PropertyAddress
 
 Alter table PortfolioProject.dbo.NashvilleHousing
+
 DROP COLUMN SaleDate
